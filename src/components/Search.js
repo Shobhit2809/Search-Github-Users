@@ -2,8 +2,47 @@ import React from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 import { GithubContext } from '../context/context';
+import { useState } from 'react';
+import { useContext } from 'react';
 const Search = () => {
-  return <h2>search component</h2>;
+  const[user,setUser] = useState('')
+  const{requests,error,searchGithubUser,isLoading} = useContext(GithubContext);
+  // get things from global context
+ 
+ 
+  const handleSubmit = (e)=>{
+    // to prevent page reloading on each submit 
+    e.preventDefault();
+    console.log('nikal lawde');
+    console.log(requests);
+    // if user is not null
+    if(user){
+      // more logic coming soon
+searchGithubUser(user)
+
+      // optional
+      // setUser('') (clean the text after submit)
+    }
+  }
+  return <section className='section'>
+<Wrapper className='section-center'>
+  {/* if error is true show <ErrorWrapper/> component */}
+  {error.show && (<ErrorWrapper>
+    <p>{error.msg}</p>
+  </ErrorWrapper>)}
+<form onSubmit={handleSubmit}>  
+  <div className="form-control">
+    <MdSearch/>
+    {/* value is what user is entering */}
+    <input type="text" placeholder='enter github user' value={user} 
+    onChange={(e)=>setUser(e.target.value)}/>
+    {/* only if requests if greater than zero and isLoading is false then only show button */}
+    {requests>0 && !isLoading && <button type='submit'>search</button>}
+  </div>
+</form>
+<h3>requests : {requests}/60</h3>
+</Wrapper>
+  </section>
 };
 
 const Wrapper = styled.div`
