@@ -37,6 +37,7 @@ const searchGithubUser = async(user)=>{
     // toggleError has bydefault show = false 
     // since we are using async await we need use it before
 
+        // to clear previous error and set it to default values
     toggleError()
     setIsLoading(true)
 

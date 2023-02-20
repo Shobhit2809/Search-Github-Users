@@ -1,38 +1,20 @@
-## Starter Project
+Project in Action - [Search-github-users](https://github-api-fetch.netlify.app/)
 
-- css provided (global styles, styled components)
-- folders/files already setup
-- all imports included (warnings)
-- index.js for easier imports
+#### Run The App Locally
 
-## Styled Components
-
-[Styled-Components - Main Docs](https://styled-components.com/)
-
-```jsx
-import styled from "styled-components";
-
-const ReactComponent = () => {
- // logic here
- return <Wrapper>
- {some content}
- </Wrapper>
-}
-
-
-const Wrapper = styled.htmlElement`
-write your styles here
-`
-export default ReactComponent
+```sh
+npm run install && npm start
 ```
+
+- visit url http://localhost:3000
 
 ## React Icons
 
 [React Icons - Main Docs](https://react-icons.github.io/react-icons/)
 
 ```jsx
-import { FiUsers, FiUserPlus } from 'react-icons/fi';
-<FiUsers className='nameOfTheClass'> </FiUsers>;
+import { FiUsers, FiUserPlus } from "react-icons/fi";
+<FiUsers className="nameOfTheClass"> </FiUsers>;
 ```
 
 ## React Router Dom
@@ -101,15 +83,3 @@ In order for routing to work on netlify, redirects was added to the public folde
 /*    /index.html   200
 
 ```
-
-[Redirects Blog Post](https://dev.to/dance2die/page-not-found-on-netlify-with-react-router-58mc)
-
-#### Warnings and create-react-app
-
-package.json
-
-```js
-"build": "CI= react-scripts build",
-```
-
-[create-react-app Warning Fix Blog Post](https://community.netlify.com/t/how-to-fix-build-failures-with-create-react-app-in-production/17752)
